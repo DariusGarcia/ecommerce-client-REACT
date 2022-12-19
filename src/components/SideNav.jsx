@@ -19,7 +19,9 @@ const SideNav = () => {
 				<h2 className='all-products-nav-items'>{navItems.title}</h2>
 				{navItems.links.map((link) => {
 					return link ? (
-						<li className='all-products-nav-items'>{link}</li>
+						<li className='all-products-nav-items' key={link}>
+							{link}
+						</li>
 					) : null
 				})}
 			</ul>

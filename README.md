@@ -1,3 +1,53 @@
+# Ecommerce React App
+
+This is the client for the ecommerce React application.
+
+## Usage
+
+User stories:
+
+- [x] user is able to create an account and login.
+- [x] user is able to view all the different products.
+- [ ] user is able to add a product to their cart.
+
+## Data Models
+
+```
+users
+```
+
+```
+products
+```
+
+```
+orders
+```
+
+```
+cart
+```
+
+## Installation
+
+clone repo to local machine then cd into directory
+
+```
+cd ecommerce-client-REACT/
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run app:
+
+```
+npm run start
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +118,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+```
+
+```
