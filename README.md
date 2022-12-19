@@ -2,7 +2,7 @@
 
 This is the client for the ecommerce React application.
 
-![Screenshot of web app](./assets/images/ecommerce-app.png)
+![Screenshot of web app](./src/assets/images/ecommerce-app.png)
 
 ## Usage
 
