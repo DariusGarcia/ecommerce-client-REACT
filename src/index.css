@@ -1,4 +1,22 @@
+:root {
+  /* width */
+  --max-w: 1224px;
+  /* padding */
+  --p-sm: .5rem;
+  --p-md: 2rem;
+
+  /* borders */
+  --br: 4px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
+  padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +28,42 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.navbar {
+  background-color: gainsboro;
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-size: auto;
+  background-size: contain;
+
+
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container>ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem
+}
+
+.nav-link {
+  padding: var(--p-sm);
+  list-style: none;
+  border-radius: var(--br);
+}
+
+.nav-link:hover {
+  background-color: grey;
 }
