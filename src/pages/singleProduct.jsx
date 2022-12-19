@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react'
 import Navbar from '../components/Navbar'
-import SingleProduct from '../components/singleProduct'
+import SingleProduct from '../components/SingleProduct'
 
 const Products = () => {
 	useEffect(() => {
-		document.title = 'All Products'
+		document.title = 'Single Products'
 	}, [])
 	return (
-		<div className='products-container'>
+		<div className='single-products-container'>
 			<Navbar />
 			<SingleProduct />
 		</div>

@@ -1,5 +1,4 @@
 import React from 'react'
-import bg from '../assets/images/japanese.png'
 
 const Navbar = () => {
 	return (
