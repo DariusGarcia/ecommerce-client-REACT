@@ -12,11 +12,11 @@ const navItems = {
 	],
 }
 
-const SideNav = () => {
+const SideNav = ({ title }) => {
 	return (
 		<nav className='all-products-nav'>
 			<ul>
-				<h2 className='all-products-nav-items'>{navItems.title}</h2>
+				<h2 className='all-products-nav-items'>{title || navItems.title}</h2>
 				{navItems.links.map((link) => {
 					return link ? (
 						<li className='all-products-nav-items' key={link}>
