@@ -2,6 +2,8 @@
 
 This is the client for the ecommerce React application.
 
+![Screenshot of web app](./assets/images/ecommerce-app.png)
+
 ## Usage
 
 User stories:
@@ -9,24 +11,6 @@ User stories:
 - [x] user is able to create an account and login.
 - [x] user is able to view all the different products.
 - [ ] user is able to add a product to their cart.
-
-## Data Models
-
-```
-users
-```
-
-```
-products
-```
-
-```
-orders
-```
-
-```
-cart
-```
 
 ## Installation
 
