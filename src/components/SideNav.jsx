@@ -1,15 +1,27 @@
 import React from 'react'
 
+const navItems = {
+	title: 'All Products',
+	links: [
+		'All Products',
+		'Sales',
+		'Gift',
+		'New Arrivals',
+		'Chocolate',
+		'Candy',
+	],
+}
+
 const SideNav = () => {
 	return (
 		<nav className='all-products-nav'>
 			<ul>
-				<h2 className='all-products-nav-items'>All Products</h2>
-				<li className='all-products-nav-items'>Sale</li>
-				<li className='all-products-nav-items'>Gift</li>
-				<li className='all-products-nav-items'>New Arrivals</li>
-				<li className='all-products-nav-items'>Chocolate</li>
-				<li className='all-products-nav-items'>Candy</li>
+				<h2 className='all-products-nav-items'>{navItems.title}</h2>
+				{navItems.links.map((link) => {
+					return link ? (
+						<li className='all-products-nav-items'>{link}</li>
+					) : null
+				})}
 			</ul>
 		</nav>
 	)
