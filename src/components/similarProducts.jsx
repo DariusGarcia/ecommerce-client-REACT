@@ -3,6 +3,18 @@ import image from '../assets/images/japanese.png'
 
 const SimilarProducts = () => {
 	const [similarProducts, setSimilarProducts] = useState([])
+	const [singleProduct, setSingleProduct] = useState([])
+
+	function fetchSingleProduct(id) {
+		const productID = id
+		const baseURL = 'http://localhost:3001'
+		const singleProductURL = `${baseURL}/api/product/${productID}`
+		fetch(singleProductURL)
+			.then((res) => res.json())
+			.then((products) => setSingleProduct(products))
+			.then(() => console.log(`Single Product GET request: ${singleProduct}`))
+			.catch((err) => console.error(err))
+	}
 
 	useEffect(() => {
 		function fetchSimilarProducts() {
@@ -30,9 +42,14 @@ const SimilarProducts = () => {
 									className='similar-products-item'
 								>
 									<img alt='product' src={image}></img>
-									<h3 className='product-name'>{product.name}</h3>
+									<h3 className='product-name'>{product.product_name}</h3>
 								</article>
-								<button className='all-products-btn'>View</button>
+								<button
+									onClick={() => fetchSingleProduct(product.id)}
+									className='all-products-btn'
+								>
+									View
+								</button>
 							</li>
 						) : null
 					})}
