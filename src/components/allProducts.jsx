@@ -28,17 +28,19 @@ const AllProducts = () => {
 					{/* all products section */}
 					<section className='all-products-section'>
 						<ul>
-							{allProducts.map((item) => {
-								return item ? (
-									<li key={item.id}>
+							{allProducts.map((product) => {
+								return product ? (
+									<li key={product.id}>
 										<article
-											key={item.id}
-											id={item.id}
+											key={product.id}
+											id={product.id}
 											className='all-products-item'
 										>
 											<img alt='product' src={image}></img>
-											<h3 className='product-name'>{item.name}</h3>
-											<p className='product-description'>{item.description}</p>
+											<h3 className='product-name'>{product.product_name}</h3>
+											<p className='product-description'>
+												{product.description}
+											</p>
 											<button className='all-products-btn'>add to cart</button>
 										</article>
 									</li>
