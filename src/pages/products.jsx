@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 
 const Products = () => {
 	useEffect(() => {
-		document.title = 'All Products'
+		document.title = 'Japanese Sweets- All Products'
 	}, [])
 	return (
 		<div className='products-container'>
