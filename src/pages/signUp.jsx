@@ -14,17 +14,6 @@ const SignUp = () => {
 	useEffect(() => {
 		document.title = 'Sign Up - Create a free account'
 	}, [])
-	function postForm(event) {
-		event.preventDefault()
-
-		if (HandleSubmit()) {
-			setEmail('')
-			setPassword('')
-			setMessage('User created successfully')
-		} else {
-			setMessage('Some error occurred')
-		}
-	}
 
 	const fetchData = async (event) => {
 		event.preventDefault()

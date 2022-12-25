@@ -1,23 +1,71 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
+const url = 'http://localhost:3001/api/user/login'
+
 const Login = () => {
+	const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+	const [message, setMessage] = useState('')
+	const [error, setError] = useState('')
+
 	useEffect(() => {
-		document.title = 'Login'
+		document.title = 'Japanese Sweets - Login'
 	}, [])
+
+	const fetchData = async (event) => {
+		event.preventDefault()
+		const body = {
+			email: email,
+			password: password,
+		}
+		const options = {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(body),
+		}
+
+		try {
+			const response = await fetch(url, options)
+			const data = await response.json()
+			return data
+		} catch (error) {
+			setError(error)
+		}
+		// setIsLoading(false)
+	}
+
 	return (
 		<div className='login-wrapper'>
 			<Navbar />
 			<main className='container login-container'>
-				<form action='submit' className='login-form container'>
+				<form
+					onSubmit={(e) => fetchData(e)}
+					action='submit'
+					className='login-form container'
+				>
 					<h1 className='main-title'>Login</h1>
 					<label htmlFor='email'>Email</label>
-					<input type='email' autoComplete='off' />
+					<input
+						onChange={(e) => setEmail(e.target.value)}
+						value={email}
+						type='email'
+						autoComplete='off'
+					/>
 					<label htmlFor='password'>Password</label>
-					<input type='password' autoComplete='off' />
-					<button>Sign In</button>
-					<a href='/signup'>Create account</a>
+					<input
+						onChange={(e) => setPassword(e.target.value)}
+						value={password}
+						type='password'
+						autoComplete='off'
+					/>
+					<button type='submit'>Sign In</button>
+					<a href='/login'>Login to existing account</a>
+
+					{/* <div className='message'>{message ? <p>{[message]}</p> : null}</div> */}
 				</form>
 			</main>
 			<Footer />
