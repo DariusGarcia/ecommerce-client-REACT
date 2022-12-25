@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import image from '../assets/images/bokku.webp'
 
 const HomeComp = () => {
+	useEffect(() => {
+		document.title = 'Japanese Sweets - Home'
+	}, [])
 	return (
 		<div className='home-component container'>
 			<header className='home-header'>
@@ -9,13 +12,20 @@ const HomeComp = () => {
 			</header>
 			<section className='image-container'>
 				{containerData.map((article) => (
-					<article className='image-article container'>
-						<a href={article.href}>
-							<img alt={article.alt} src={article.img}></img>
+					<article className='image-article container' key={article.id}>
+						<a href={article.href} key='href'>
+							<img
+								className='home-image'
+								alt={article.alt}
+								src={article.img}
+								key='image'
+							></img>
 						</a>
-						<figure className='container'>
-							<h2 className='sub-title'>{article.title}</h2>
-							<p>{article.text}</p>
+						<figure className='container' key='figure'>
+							<h3 className='sub-title' key='title'>
+								{article.title}
+							</h3>
+							<p key='text'>{article.text}</p>
 						</figure>
 					</article>
 				))}
