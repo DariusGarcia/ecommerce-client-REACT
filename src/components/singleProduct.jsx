@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import image from '../assets/images/japanese.png'
+import React, { useEffect } from 'react'
 import useFetchData from '../hooks/useFetchData'
 import Footer from './Footer'
 import SideNav from './SideNav'
@@ -10,7 +8,9 @@ const SingleProduct = () => {
 	const productID = '3'
 	const url = `http://localhost:3001/api/product/${productID}`
 	const { data, isLoading, error } = useFetchData(url)
-
+	useEffect(() => {
+		document.title = { productID }
+	}, [])
 	return (
 		<>
 			{isLoading ? (
