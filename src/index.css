@@ -85,11 +85,31 @@ a {
   justify-content: center;
 }
 
+/* BUTTONS  */
+.btn {
+  height: 4rem;
+  width: 24rem;
+  text-align: center;
+  padding: 2rem;
+  border-radius: var(--br);
+  color: white;
+  background-color: var(--orange);
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.btn:hover {
+  opacity: 70%;
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* mobile hamburger menu */
 .mobile-container {
   margin: auto;
   z-index: 50;
-  background-color: var(--orange);
+  color: black;
 }
 
 .navbar-mobile {
@@ -98,6 +118,7 @@ a {
 
 .navbar-mobile h1 {
   font-weight: 600;
+  color: black;
 }
 
 .nav-container {
@@ -109,6 +130,7 @@ a {
 
 .navbar-mobile .menu-items {
   display: flex;
+
 }
 
 .navbar-mobile .nav-container li {
@@ -180,9 +202,14 @@ a {
   transition: transform 0.4s ease-in-out;
 }
 
+.menu-items>a {
+  color: black;
+}
+
 .navbar-mobile .menu-items {
   padding-top: 120px;
   background-color: gainsboro;
+
   height: 100vh;
   width: 100%;
   transform: translate(-150%);
@@ -205,7 +232,7 @@ a {
   position: absolute;
   right: 15px;
   font-size: 1.2rem;
-  color: black;
+  color: white;
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -309,7 +336,23 @@ nav .nav-link:hover {
 landing header component
 ------------------------------------------ 
 */
-.header-cta {}
+.header-cta {
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  background-color: var(--cream);
+  align-items: center;
+
+}
+
+.header-cta>a {
+  margin-top: 1rem;
+}
+
+.header-cta>p:nth-child(2n+1) {
+  width: 50%;
+  text-align: center;
+}
 
 /* 
 ------------------------------------------
@@ -320,7 +363,6 @@ Home component
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--cream);
   /* CHANGE HEIGHT TO 100% INSTEAD OF 100 VIEWPORT WIDTH */
   height: 100%;
   overflow: hidden;
@@ -412,7 +454,6 @@ side navbar
   width: 100%;
   margin-bottom: var(--p-md);
   border-right: 2px solid gainsboro;
-  height:
 }
 
 .all-products-nav-items {
@@ -445,11 +486,11 @@ side navbar
 single product component
 ------------------------------------------ 
 */
-.single-products-container {}
+/* .single-products-container {}
 
 .single-products-container {}
 
-.single-product-section {}
+.single-product-section {} */
 
 /* 
 ------------------------------------------
@@ -638,33 +679,37 @@ media queries
 }
 
 @media (min-width: 1140px) {
-
-
-  .image-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
+  .header-cta {
+    height: 24rem;
   }
 
-  .image-article a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .header-cta>p:nth-child(2n+1) {
+    max-width: 36rem;
   }
+}
 
-  .home-image {
-    width: 20rem;
-  }
+.image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
 
-  figure>p {
-    width: 75%;
-  }
+.image-article a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.home-image {
+  width: 20rem;
+}
 
+figure>p {
+  width: 75%;
+}
 
-  .login-form {
-    max-width: 40vw;
-  }
+.login-form {
+  max-width: 40vw;
 }

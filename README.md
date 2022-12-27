@@ -9,7 +9,8 @@ This is the client for the ecommerce React application.
 User stories:
 
 - [x] user is able to create an account and login.
-- [x] user is able to view all the different products.
+- [x] user is able to view all products.
+- [x] user is able to view a single product.
 - [ ] user is able to add a product to their cart.
 
 ## Installation
