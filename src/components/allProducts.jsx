@@ -16,6 +16,7 @@ const AllProducts = () => {
 
 		fetchAllProducts()
 		console.log(allProducts)
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	return (
@@ -29,26 +30,14 @@ const AllProducts = () => {
 					<section className='all-products-section'>
 						{allProducts.map((product) => {
 							return product ? (
-								<>
-									<div key={product.id}>
-										<article
-											key={product.id}
-											id={product.id}
-											className='all-products-item'
-										>
-											<img alt='product' src={image} key='image'></img>
-											<h3 className='product-name' key='title'>
-												{product.product_name}
-											</h3>
-											<p className='product-description' key='description'>
-												{product.description}
-											</p>
-											<button className='all-products-btn' key='addToCart'>
-												add to cart
-											</button>
-										</article>
-									</div>
-								</>
+								<div key={product.id}>
+									<article id={product.id} className='all-products-item'>
+										<img alt='product' src={image}></img>
+										<h3 className='product-name'>{product.product_name}</h3>
+										<p className='product-description'>{product.description}</p>
+										<button className='all-products-btn'>add to cart</button>
+									</article>
+								</div>
 							) : null
 						})}
 					</section>
