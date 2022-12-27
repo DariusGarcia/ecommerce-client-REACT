@@ -1,41 +1,34 @@
 import React, { useState, useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { userLogin } from '../features/auth/authActions'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
 const url = 'http://localhost:3001/api/user/login'
 
 const Login = () => {
-	const [email, setEmail] = useState('')
-	const [password, setPassword] = useState('')
-	const [message, setMessage] = useState('')
-	const [error, setError] = useState('')
+	// const [email, setEmail] = useState('')
+	// const [password, setPassword] = useState('')
 
+	const { loading, userInfo, error } = useSelector((state) => state.auth)
+	const dispatch = useDispatch()
+
+	const { register, handleSubmit } = useForm()
+
+	const navigate = useNavigate()
+
+	// redirect authenticated user to profile screen
 	useEffect(() => {
 		document.title = 'Japanese Sweets - Login'
-	}, [])
+		if (userInfo) {
+			navigate('/products')
+		}
+	}, [navigate, userInfo])
 
-	const fetchData = async (event) => {
-		event.preventDefault()
-		const body = {
-			email: email,
-			password: password,
-		}
-		const options = {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(body),
-		}
-
-		try {
-			const response = await fetch(url, options)
-			const data = await response.json()
-			return data
-		} catch (error) {
-			setError(error)
-		}
-		// setIsLoading(false)
+	const submitForm = (data) => {
+		dispatch(userLogin(data))
 	}
 
 	return (
@@ -43,26 +36,30 @@ const Login = () => {
 			<Navbar />
 			<main className='container login-container'>
 				<form
-					onSubmit={(e) => fetchData(e)}
+					onSubmit={handleSubmit(submitForm)}
 					action='submit'
 					className='login-form container'
 				>
 					<h1 className='main-title'>Login</h1>
 					<label htmlFor='email'>Email</label>
 					<input
-						onChange={(e) => setEmail(e.target.value)}
-						value={email}
+						// onChange={(e) => setEmail(e.target.value)}
+						// value={email}
 						type='email'
 						autoComplete='off'
+						{...register('email')}
+						required
 					/>
 					<label htmlFor='password'>Password</label>
 					<input
-						onChange={(e) => setPassword(e.target.value)}
-						value={password}
+						// onChange={(e) => setPassword(e.target.value)}
+						// value={password}
 						type='password'
 						autoComplete='off'
+						{...register('password')}
+						required
 					/>
-					<button type='submit'>Sign In</button>
+					<button type='submit'> {loading ? 'loading...' : 'Login'}</button>
 					<a href='/login'>Login to existing account</a>
 
 					{/* <div className='message'>{message ? <p>{[message]}</p> : null}</div> */}
