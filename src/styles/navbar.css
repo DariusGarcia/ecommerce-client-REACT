@@ -155,6 +155,16 @@
     display: none;
 }
 
+.logout-btn {
+    width: 6rem;
+    padding: 0.5rem;
+    border-radius: var(--br);
+    color: white;
+    background-color: var(--orange);
+    border: none;
+    text-transform: uppercase;
+}
+
 /* 
   ------------------------------------------
   large viewport navbar
