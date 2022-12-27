@@ -639,9 +639,6 @@ media queries
 ------------------------------------------ 
 */
 @media (min-width: 768px) {
-  .navbar-mobile {
-    display: none;
-  }
 
   .login-container {
     justify-content: center;
@@ -653,10 +650,6 @@ media queries
     width: 50%;
   }
 
-  #large-navbar {
-    display: flex;
-    flex-direction: column;
-  }
 }
 
 @media (min-width: 978px) {
@@ -686,30 +679,31 @@ media queries
   .header-cta>p:nth-child(2n+1) {
     max-width: 36rem;
   }
-}
 
-.image-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100%;
-}
 
-.image-article a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  .image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+  }
 
-.home-image {
-  width: 20rem;
-}
+  .image-article a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-figure>p {
-  width: 75%;
-}
+  .home-image {
+    width: 20rem;
+  }
 
-.login-form {
-  max-width: 40vw;
+  figure>p {
+    width: 75%;
+  }
+
+  .login-form {
+    max-width: 40vw;
+  }
 }
