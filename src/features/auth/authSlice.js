@@ -8,7 +8,7 @@ const userToken = localStorage.getItem('userToken')
 
 const initialState = {
 	loading: false,
-	userInfo: null,
+	userInfo: 'null',
 	userToken,
 	error: null,
 	success: false,

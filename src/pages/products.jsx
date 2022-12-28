@@ -8,7 +8,6 @@ const Products = () => {
 	}, [])
 	return (
 		<div className='products-container'>
-			<Navbar />
 			<AllProducts />
 		</div>
 	)

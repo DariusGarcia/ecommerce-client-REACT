@@ -7,7 +7,7 @@ import { logout, setCredentials } from '../features/auth/authSlice'
 import '../styles/navbar.css'
 
 const Navbar = () => {
-	const { userInfo } = useSelector((state) => state.auth)
+	const { userInfo } = useSelector((state) => state.auth || {})
 	const dispatch = useDispatch()
 
 	// automatically authenticate user if token is found
@@ -15,7 +15,6 @@ const Navbar = () => {
 	// 	pollingInterval: 900000, // 15mins
 	// })
 
-	console.log(userInfo)
 	// useEffect(() => {
 	// 	if (data) dispatch(setCredentials(data))
 	// }, [data, dispatch])
@@ -61,17 +60,17 @@ const Navbar = () => {
 					</div>
 					<div className='nav-container'>
 						<div className='header-status'>
-							<span>
+							<p className='header-status-user'>
 								{userInfo
-									? `Logged in as ${userInfo.email}`
+									? `Welcome ${userInfo.email}`
 									: userInfo !== null
 									? `Fetching your profile...`
-									: 'Please login'}
-							</span>
+									: ''}
+							</p>
 							<div className='cta'></div>
 						</div>
 						<ul>
-							<li className='nav-link'>
+							<div className=''>
 								{userInfo ? (
 									<button
 										className='logout-btn'
@@ -80,11 +79,20 @@ const Navbar = () => {
 										Logout
 									</button>
 								) : (
-									<NavLink className='button' to='/login'>
-										Login
-									</NavLink>
+									<ul className='auth-links-container'>
+										<li className='nav-link'>
+											<NavLink className='button' to='/login'>
+												Login
+											</NavLink>
+										</li>
+										<li className='nav-link'>
+											<NavLink className='button' to='/register'>
+												Register
+											</NavLink>
+										</li>
+									</ul>
 								)}
-							</li>
+							</div>
 
 							<li className='nav-link'>Cart</li>
 						</ul>

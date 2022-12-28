@@ -7,7 +7,6 @@ import LandingHeader from '../components/landingHeader'
 const Home = () => {
 	return (
 		<div>
-			<Navbar />
 			<LandingHeader />
 			<HomeComp />
 			<Footer />

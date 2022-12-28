@@ -11,7 +11,7 @@ import { registerUser } from '../features/auth/authActions'
 const SignUp = () => {
 	const [customError, setCustomError] = useState(null)
 	const { loading, userInfo, error, success } = useSelector(
-		(state) => state.auth
+		(state) => state.auth || {}
 	)
 	const dispatch = useDispatch()
 	const { register, handleSubmit } = useForm()
@@ -21,7 +21,6 @@ const SignUp = () => {
 		// redirect user to login page if registration was successful
 		if (success) navigate('/login')
 	}, [navigate, userInfo, success])
-
 	const submitForm = (data) => {
 		// transform email string to lowercase to avoid case sensitivity issues in login
 		data.email = data.email.toLowerCase()
@@ -30,7 +29,6 @@ const SignUp = () => {
 
 	return (
 		<div className='login-wrapper'>
-			<Navbar />
 			<main className='container login-container'>
 				<form
 					onSubmit={handleSubmit(submitForm)}

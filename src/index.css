@@ -19,6 +19,7 @@
   --cream: #eae5d9;
   --cream2: #faedcd;
   --cream3: #f2eee7;
+  --light-cream: #f6f4f1;
   --brown: #d4a373;
   --orange: #b73d09;
 
@@ -592,8 +593,13 @@ login form
   }
 
   .all-products-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 24rem;
     overflow: hidden;
+    background-color: var(--light-cream);
+    padding: var(--p-sm);
 
   }
 
@@ -603,6 +609,10 @@ login form
 
   .similar-products-item>img {
     width: 12rem;
+  }
+
+  .product-description {
+    text-align: center;
   }
 
   /* 

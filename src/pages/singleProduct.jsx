@@ -8,7 +8,6 @@ const Products = () => {
 	}, [])
 	return (
 		<div className='single-products-container'>
-			<Navbar />
 			<SingleProduct />
 		</div>
 	)

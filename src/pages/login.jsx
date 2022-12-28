@@ -6,16 +6,13 @@ import { userLogin } from '../features/auth/authActions'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import Spinner from '../components/Spinner'
-import Error from '../components/Error'
 
 const Login = () => {
 	const { loading, userInfo, error } = useSelector((state) => state.auth)
 	const dispatch = useDispatch()
 	const { register, handleSubmit } = useForm()
 	const navigate = useNavigate()
-	const submitForm = (data) => {
-		dispatch(userLogin(data))
-	}
+
 	// redirect authenticated user to profile screen
 	useEffect(() => {
 		document.title = 'Japanese Sweets - Login'
@@ -23,17 +20,18 @@ const Login = () => {
 			navigate('/products')
 		}
 	}, [navigate, userInfo])
-
+	const submitForm = (data) => {
+		dispatch(userLogin(data))
+	}
 	return (
 		<div className='login-wrapper'>
-			<Navbar />
 			<main className='container login-container'>
 				<form
 					onSubmit={handleSubmit(submitForm)}
 					action='submit'
 					className='login-form container'
 				>
-					{error && <Error>{error}</Error>}
+					{/* {error && <Error>{error}</Error>} */}
 					<h1 className='main-title'>Login</h1>
 					<label htmlFor='email'>Email</label>
 					<input

@@ -1,3 +1,14 @@
+.header-status-user {
+    font-size: .8rem;
+
+}
+
+.auth-links-container {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
 /* mobile hamburger menu */
 .mobile-container {
     margin: auto;
@@ -102,7 +113,6 @@
 .navbar-mobile .menu-items {
     padding-top: 120px;
     background-color: gainsboro;
-
     height: 100vh;
     width: 100%;
     transform: translate(-150%);
@@ -165,6 +175,7 @@
     text-transform: uppercase;
 }
 
+
 /* 
   ------------------------------------------
   large viewport navbar
@@ -181,6 +192,7 @@
     background-size: contain;
     font-family: var(--sans);
     text-transform: uppercase;
+    background-color: var(--light-cream);
 }
 
 .nav-topbar {
@@ -226,12 +238,18 @@ nav .nav-link:hover {
 
 .all-products-nav-items:hover {
     transition-duration: 100ms;
-    background-color: gainsboro;
+    background-color: var(--light-cream);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .product-name {
     margin: var(--p-sm) 0;
+    font-family: var(--serif);
+}
+
+.product-price {
+    margin-top: 1rem;
+    font-family: var(--sans);
 }
 
 /* 
