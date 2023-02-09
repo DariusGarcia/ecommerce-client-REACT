@@ -2,7 +2,7 @@
     padding: 0.6rem 0;
 }
 
-.spinner-circle {
+.spinnerCircle {
     position: absolute;
     left: 0;
     top: 0;
@@ -16,7 +16,7 @@
     padding: 0.5rem 1rem;
 }
 
-.spinner-circle:before {
+.spinnerCircle:before {
     z-index: 5;
     content: '';
     position: absolute;
@@ -29,7 +29,7 @@
     animation: loading 1s linear infinite;
 }
 
-.spinner-circle:after {
+.spinnerCircle:after {
     content: '';
     position: absolute;
     border-radius: 50%;
