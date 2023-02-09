@@ -19,6 +19,7 @@
   --cream: #eae5d9;
   --cream2: #faedcd;
   --cream3: #f2eee7;
+  --light-cream: #f6f4f1;
   --brown: #d4a373;
   --orange: #b73d09;
 
@@ -514,41 +515,6 @@ similar product component
   overflow: hidden;
 }
 
-/* 
-------------------------------------------
-login form 
------------------------------------------- 
-*/
-
-
-.login-container {
-  margin-top: 2rem 0;
-
-  height: 70vh;
-  background-color: var(--cream);
-}
-
-.login-form>input {
-  margin-bottom: 1rem;
-}
-
-.login-form>label {
-  margin-bottom: .5rem;
-  font-size: 1.2rem;
-}
-
-.login-form>input {
-  height: 3rem;
-}
-
-.login-form>button {
-  height: 2.5rem;
-  background-color: var(--orange);
-  color: white;
-  border: none;
-  border-radius: var(--br);
-  margin: 1rem 0;
-}
 
 
 @media (min-width: 947px) {
@@ -592,8 +558,13 @@ login form
   }
 
   .all-products-item {
-    height: 24rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
     overflow: hidden;
+    background-color: var(--light-cream);
+    padding: var(--p-sm);
 
   }
 
@@ -603,6 +574,10 @@ login form
 
   .similar-products-item>img {
     width: 12rem;
+  }
+
+  .product-description {
+    text-align: center;
   }
 
   /* 
@@ -638,19 +613,7 @@ footer
 media queries 
 ------------------------------------------ 
 */
-@media (min-width: 768px) {
-
-  .login-container {
-    justify-content: center;
-    width: 100%;
-    align-items: center;
-  }
-
-  .login-form {
-    width: 50%;
-  }
-
-}
+@media (min-width: 768px) {}
 
 @media (min-width: 978px) {
   .image-container {

@@ -1,0 +1,65 @@
+/* 
+------------------------------------------
+login form 
+------------------------------------------ 
+*/
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.loginContainer {
+    margin-top: 2rem 0;
+
+    height: 70vh;
+    background-color: var(--cream);
+}
+
+.loginForm>input {
+    margin-bottom: 1rem;
+}
+
+.loginForm>label {
+    margin-bottom: .5rem;
+    font-size: 1.2rem;
+}
+
+.loginForm>input {
+    height: 3rem;
+}
+
+.loginForm>button {
+    height: 2.5rem;
+    background-color: var(--orange);
+    color: white;
+    border: none;
+    border-radius: var(--br);
+    margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+
+    .loginContainer {
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+
+    .loginForm {
+        width: 50%;
+    }
+}
+
+@media (min-width: 978px) {
+    .login-form {
+        max-width: 40vw;
+    }
+}
+
+@media (min-width: 1140px) {
+    .login-form {
+        max-width: 40vw;
+    }
+}

@@ -13,13 +13,11 @@ export const userLogin = createAsyncThunk(
 					'Content-Type': 'application/json',
 				},
 			}
-
 			const { data } = await axios.post(
 				`${backendURL}/api/user/login`,
 				{ email, password },
 				config
 			)
-
 			// store user's token in local storage
 			localStorage.setItem('userToken', data.userToken)
 
