@@ -515,41 +515,6 @@ similar product component
   overflow: hidden;
 }
 
-/* 
-------------------------------------------
-login form 
------------------------------------------- 
-*/
-
-
-.login-container {
-  margin-top: 2rem 0;
-
-  height: 70vh;
-  background-color: var(--cream);
-}
-
-.login-form>input {
-  margin-bottom: 1rem;
-}
-
-.login-form>label {
-  margin-bottom: .5rem;
-  font-size: 1.2rem;
-}
-
-.login-form>input {
-  height: 3rem;
-}
-
-.login-form>button {
-  height: 2.5rem;
-  background-color: var(--orange);
-  color: white;
-  border: none;
-  border-radius: var(--br);
-  margin: 1rem 0;
-}
 
 
 @media (min-width: 947px) {
@@ -596,7 +561,7 @@ login form
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 24rem;
+    height: 100%;
     overflow: hidden;
     background-color: var(--light-cream);
     padding: var(--p-sm);
@@ -648,19 +613,7 @@ footer
 media queries 
 ------------------------------------------ 
 */
-@media (min-width: 768px) {
-
-  .login-container {
-    justify-content: center;
-    width: 100%;
-    align-items: center;
-  }
-
-  .login-form {
-    width: 50%;
-  }
-
-}
+@media (min-width: 768px) {}
 
 @media (min-width: 978px) {
   .image-container {

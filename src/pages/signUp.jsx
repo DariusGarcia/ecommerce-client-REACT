@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import Error from '../components/Error'
 import Spinner from '../components/spinner/Spinner'
 import { registerUser } from '../features/auth/authActions'
+import style from '../styles/login.module.css'
 
 const SignUp = () => {
   const [customError, setCustomError] = useState(null)
@@ -28,32 +29,30 @@ const SignUp = () => {
   }
 
   return (
-    <div className='login-wrapper'>
-      <main className='container login-container'>
+    <div className={style.loginWrapper}>
+      <main className={`${style.container} ${style.loginContainer}`}>
         <form
           onSubmit={handleSubmit(submitForm)}
           action='submit'
-          className='login-form container'
+          className={`${style.loginForm} ${style.container}`}
         >
-          {error && <Error>{error}</Error>}
-          {customError && <Error>{customError}</Error>}
-          <h1 className='main-title'>Sign Up</h1>
+          <h1 className={style.mainTitle}>Sign Up</h1>
           <label htmlFor='email'>Email</label>
           <input
-            {...register('email')}
-            required
             type='email'
             autoComplete='off'
+            {...register('email')}
+            required
           />
           <label htmlFor='password'>Password</label>
           <input
-            {...register('password')}
-            required
             type='password'
             autoComplete='off'
+            {...register('password')}
+            required
           />
-          <button type='submit' className='button' disabled={loading}>
-            {loading ? <Spinner /> : 'Register'}
+          <button type='submit' className={style.button} disabled={loading}>
+            {loading ? <Spinner /> : 'Sign Up'}
           </button>
           <a href='/login'>Login to existing account</a>
         </form>
