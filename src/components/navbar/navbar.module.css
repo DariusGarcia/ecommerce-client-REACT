@@ -1,15 +1,107 @@
 .headerStatusUser {
     font-size: .8rem;
-
 }
 
 .authLinksContainer {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     gap: 3rem;
 }
 
-/* mobile hamburger menu */
+
+/*
+  *------------------------------------------------------------------------------------
+  *large viewport navbar
+  *------------------------------------------------------------------------------------ 
+  */
+#largeNavbar {
+    max-height: 12rem;
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-size: auto;
+    background-size: contain;
+    font-family: var(--sans);
+    text-transform: uppercase;
+    background-color: var(--light-cream);
+}
+
+.navTopbar {
+    height: 2.5rem;
+    width: 100%;
+    background-color: var(--orange)
+}
+
+.mainNavbar {
+    margin-bottom: 4rem;
+}
+
+.navContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#largeNavbar>section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+
+}
+
+.navContainer>ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem
+}
+
+.navLink {
+    padding: var(--p-sm);
+    list-style: none;
+    border-radius: var(--br);
+}
+
+.navLink a {
+    text-decoration: none;
+    color: black;
+}
+
+nav .navLink:hover {
+    background-color: white;
+}
+
+.allProductsNavItems:hover {
+    transition-duration: 100ms;
+    background-color: var(--light-cream);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.productName {
+    margin: var(--p-sm) 0;
+    font-family: var(--serif);
+}
+
+.productPrice {
+    margin-top: 1rem;
+    font-family: var(--sans);
+}
+
+/* 
+*------------------------------------------------------------------------------
+* mobile hamburger menu 
+*------------------------------------------------------------------------------
+*/
 .mobileContainer {
     margin: auto;
     z-index: 50;
@@ -34,7 +126,6 @@
 
 .navbarMobile .menuItems {
     display: flex;
-
 }
 
 .navbarMobile .navContainer li {
@@ -175,82 +266,6 @@
     text-transform: uppercase;
 }
 
-
-/* 
-  ------------------------------------------
-  large viewport navbar
-  ------------------------------------------ 
-  */
-#largeNavbar {
-    max-height: 12rem;
-    width: 100%;
-    display: none;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    background-size: auto;
-    background-size: contain;
-    font-family: var(--sans);
-    text-transform: uppercase;
-    background-color: var(--light-cream);
-}
-
-.navTopbar {
-    height: 2.5rem;
-    width: 100%;
-    background-color: var(--orange)
-}
-
-.navContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#largeNavbar>section {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 2rem;
-
-}
-
-.navContainer>ul {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem
-}
-
-.navLink {
-    padding: var(--p-sm);
-    list-style: none;
-    border-radius: var(--br);
-}
-
-nav .navLink:hover {
-    background-color: white;
-}
-
-.allProductsNavItems:hover {
-    transition-duration: 100ms;
-    background-color: var(--light-cream);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.productName {
-    margin: var(--p-sm) 0;
-    font-family: var(--serif);
-}
-
-.productPrice {
-    margin-top: 1rem;
-    font-family: var(--sans);
-}
 
 /* 
 ------------------------------------------

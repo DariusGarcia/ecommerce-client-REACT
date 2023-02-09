@@ -6,7 +6,12 @@ import { useGetDetailsQuery } from '../../../app/services/auth/authService'
 import { logout, setCredentials } from '../../../features/auth/authSlice'
 import style from '../navbar.module.css'
 
-const Navbar = () => {
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+
+const NavBar = () => {
   const { userInfo } = useSelector((state) => state.auth || {})
   const dispatch = useDispatch()
 
@@ -21,82 +26,37 @@ const Navbar = () => {
 
   return (
     <>
-      <nav id={style.hamburgerNav}>
-        <div className={style.navbarMobile}>
-          <div className={`${style.mobileContainer} ${style.navContainer}`}>
-            <input className={style.checkbox} type='checkbox' name='' id='' />
-            <div className={style.hamburgerLines}>
-              <span className={`${style.line} ${style.line1}`}></span>
-              <span className={`${style.line} ${style.line2}`}></span>
-              <span className={`${style.line} ${style.line3}`}></span>
-            </div>
-            <div className={style.logo}>
-              <h1>Ecommerce Site</h1>
-            </div>
-            <div className={style.menuItems}>
-              <li>
-                <a href='#recipe-search-form'>Recipes</a>
-              </li>
-              <li>
-                <a href='#news-wrapper'>News</a>
-              </li>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <nav id={style.largeNavbar}>
-        <div className={style.navTopbar}></div>
-        <section>
-          <div className={style.navContainer}>
-            <ul>
-              <li className={style.navLink}>
-                <a href='/'>Japanese Sweets</a>
-              </li>
-              <li className={style.navLink}>
-                <a href='/products'>Shop</a>
-              </li>
-              <li className={style.navLink}>About</li>
-            </ul>
-          </div>
-          <div className={style.navContainer}>
-            <div className={style.headerStatus}>
-              <p className={style.headerStatusUser}>
-                {userInfo ? `Welcome ${userInfo.email}` : ''}
-              </p>
-              <div className={style.cta}></div>
-            </div>
-            <ul>
-              <div>
-                {userInfo ? (
-                  <button
-                    className={style.logoutBtn}
-                    onClick={() => dispatch(logout())}
-                  >
-                    Logout
-                  </button>
-                ) : (
-                  <ul className={style.authLinksContainer}>
-                    <li className={style.navLink}>
-                      <NavLink className={style.button} to='/login'>
-                        Login
-                      </NavLink>
-                    </li>
-                    <li className={style.navLink}>
-                      <NavLink className={style.button} to='/register'>
-                        Register
-                      </NavLink>
-                    </li>
-                  </ul>
-                )}
-              </div>
-
-              <li className={style.navLink}>Cart</li>
-            </ul>
-          </div>
-        </section>
-      </nav>
+      <div className={style.navTopbar}></div>
+      <Navbar bg='light' expand='lg' className={style.mainNavbar}>
+        <Container>
+          <Navbar.Brand href='/'>Japanese Sweets</Navbar.Brand>
+          <Navbar.Toggle aria-controls='basic-navbar-nav' />
+          <Navbar.Collapse id='basic-navbar-nav'>
+            <Nav className='me-auto'>
+              <Nav.Link href='/'>Home</Nav.Link>
+              <Nav.Link href='/about'>About</Nav.Link>
+              <NavDropdown title='Profile' id='basic-nav-dropdown'>
+                <NavDropdown.Item href='#action/3.1'>Settings</NavDropdown.Item>
+                <NavDropdown.Item href='#action/3.2'>
+                  Another action
+                </NavDropdown.Item>
+                <NavDropdown.Item href='#action/3.3'>
+                  Something
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href='#action/3.4'>
+                  Separated link
+                </NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link href='/cart'>Cart</Nav.Link>
+              <Nav.Link href='/login'>Login</Nav.Link>
+              <Nav.Link href='/register'>Sign Up</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </>
   )
 }
 
-export default Navbar
+export default NavBar
