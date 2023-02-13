@@ -3,6 +3,7 @@ import useFetchData from '../../hooks/useFetchData'
 import Footer from '../Footer'
 import SideNav from '../navbar/sideNavBar/SideNav'
 import SimilarProducts from './similarProducts'
+import style from './allProducts.module.css'
 
 const SingleProduct = () => {
   const productID = '3'
@@ -16,26 +17,30 @@ const SingleProduct = () => {
       {isLoading ? (
         <h1 className='loading'>Loading</h1>
       ) : (
-        <section className='all-products-container'>
-          <div className='all-products-div'>
+        <section className={style.allProductsContainer}>
+          <div className={style.allProductsDiv}>
             {/* side navigation bar */}
             <SideNav title={data.product_name} />
 
             {/* single product section */}
-            <section className='single-product-section'>
+            <section className={style.singleProductSection}>
               <ul>
                 <li key={data.id}>
                   <article
                     key={data.id}
                     id={data.id}
-                    className='all-products-item'
+                    className={style.allProductsItem}
                   >
                     <img alt='product' src={data.image_url}></img>
                     <h3 className='product-name'>
                       {data.product_name ? data.product_name : 'NOT FOUND'}
                     </h3>
-                    <p className='product-description'>{data.description}</p>
-                    <button className='all-products-btn'>Add to cart</button>
+                    <p className={style.productDescription}>
+                      {data.description}
+                    </p>
+                    <button className={style.allProductsBtn}>
+                      Add to cart
+                    </button>
                   </article>
                   <SimilarProducts />
                 </li>

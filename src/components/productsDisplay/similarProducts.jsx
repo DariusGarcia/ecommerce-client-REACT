@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import image from '../../assets/images/japanese.png'
+import style from './allProducts.module.css'
 
 const SimilarProducts = () => {
   const [similarProducts, setSimilarProducts] = useState([])
@@ -32,8 +33,8 @@ const SimilarProducts = () => {
 
   return (
     <>
-      <h2 className='similar-products-title'>Similar Products</h2>
-      <section className='similar-products-container'>
+      <h2 className={style.similarProductsTitle}>Similar Products</h2>
+      <section className={style.similarProductsContainer}>
         <ul>
           {similarProducts.map((product) => {
             return product ? (
@@ -41,14 +42,14 @@ const SimilarProducts = () => {
                 <article
                   key={product.id}
                   id={product.id}
-                  className='similar-products-item'
+                  className={style.similarProductsItem}
                 >
                   <img alt='product' src={image}></img>
-                  <h3 className='product-name'>{product.product_name}</h3>
+                  <h3 className={style.productName}>{product.product_name}</h3>
                 </article>
                 <button
                   onClick={() => setFetchURL(product.id)}
-                  className='all-products-btn'
+                  className={style.allProductsBtn}
                 >
                   View
                 </button>

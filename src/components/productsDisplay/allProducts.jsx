@@ -5,6 +5,7 @@ import SideNav from '../navbar/sideNavBar/SideNav'
 import { useGetAllProductsQuery } from '../../features/products/productsSlice'
 import Spinner from '../spinner/Spinner'
 import Error from '../Error'
+import style from './allProducts.module.css'
 
 const AllProducts = () => {
   const { data, error, isLoading, isSuccess, isFetching, isError } =
@@ -18,13 +19,13 @@ const AllProducts = () => {
   }
   return (
     <>
-      <section className='all-products-container'>
-        <div className='all-products-div'>
+      <section className={style.allProductsContainer}>
+        <div className={style.allProductsDiv}>
           {/* side navigation bar */}
           <SideNav />
 
           {/* all products section */}
-          <section className='all-products-section'>
+          <section className={style.allProductsSection}>
             {error && (
               <Error>
                 <h1>
@@ -36,14 +37,19 @@ const AllProducts = () => {
               ? data.map((product) => {
                   return product ? (
                     <div key={product.id}>
-                      <article id={product.id} className='all-products-item'>
+                      <article
+                        id={product.id}
+                        className={style.allProductsItem}
+                      >
                         <img alt='product' src={image}></img>
-                        <h3 className='product-name'>{product.product_name}</h3>
-                        <p className='product-description'>
+                        <h3 className={style.productName}>
+                          {product.product_name}
+                        </h3>
+                        <p className={style.productDescription}>
                           {product.description}
                         </p>
-                        <p className='product-price'>${product.price}</p>
-                        <button className='all-products-btn'>
+                        <p className={style.productPrice}>${product.price}</p>
+                        <button className={style.allProductsBtn}>
                           add to cart
                         </button>
                       </article>

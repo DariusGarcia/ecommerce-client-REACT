@@ -11,10 +11,17 @@
     gap: 3rem;
 }
 
+/* 
+* Bootstrap navbar
+*/
+.navbarContainer {
+    display: flex;
+    gap: 2rem;
+}
 
 /*
   *------------------------------------------------------------------------------------
-  *large viewport navbar
+  * large viewport navbar
   *------------------------------------------------------------------------------------ 
   */
 #largeNavbar {
